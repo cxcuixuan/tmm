@@ -1,4 +1,3 @@
-% cInt 还有问题
 miuR = 1 ; miuT = 1;
 epsR = n0^2 ; epsT = nT^2;
 k0 = 2*pi/lambda;
@@ -24,8 +23,12 @@ sD = [s11 s12 ; s21 s22] ;
 
 k=[kX;kY;kZR];
 k=k/(k'*k);
-aTE = cross(k,[0;0;-1]);
-aTE = aTE/sqrt(aTE'*aTE);
+if cross(k,[0;0;-1])
+  aTE = cross(k,[0;0;-1]);
+  aTE = aTE/sqrt(aTE'*aTE);
+else
+    aTE = [0;1;0];
+end
 aTM = cross(aTE,k);
 aTM = aTM/sqrt(aTM'*aTM);
 eInc = pTE*aTE + pTM*aTM;

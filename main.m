@@ -1,13 +1,17 @@
-n0 = 1; % incident index
+n0 = 1.5; % incident index
 nT = 1 ; % transmission index
-eps=[] ;miu=[]; % epsilon and miu of each layer 
-thickness = []; % thickness of each layer
+eps=[-10-0.5*1i] ;miu=[1]; % epsilon and miu of each layer for n-i*k
+thickness = [0.15]; % thickness of each layer
 lambda = 1 ; % incident wavelength
-theta = 57;  % angle with z-axis
-phi = 23;    % argument
-pTE = 1;  % TE component
-pTM = 1i; % TM component
-tmm;
+% theta = 0;  % angle with z-axis
+phi = 0;    % argument
+pTE = 0;  % TE component
+pTM = 1; % TM component
+for count = 1:400;
+    theta = count/5;
+    tmm;
+    r(count)=R;
+end
 % for m = 0:500
 %     theta = m/10;
 % tmm;
