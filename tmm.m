@@ -1,4 +1,3 @@
-% cInt 还有问题
 init; 
 layer_cal;
 sG = redcross(sR,sD) ;
@@ -9,10 +8,8 @@ sG = redcross(sR,sD) ;
 sT = [B/A 0.5*(A-B/A*B) ;  2*inv(A) -A\B];
 sG = redcross(sG,sT);
 
-cInt = [0;1];
-
-eRel = get_s(sG,11)*cInt ;
-eTrn = get_s(sG,21)*cInt ; 
+eRel = get_s(sG,11)*cInc ;
+eTrn = get_s(sG,21)*cInc ; 
 eZR = (-kX*eRel(1)-kY*eRel(2))/kZR;
 eZT = (-kX*eTrn(1)-kY*eTrn(2))/kZT;
 R = abs(eRel(1))^2+abs(eRel(2))^2+abs(eZR)^2 ;
