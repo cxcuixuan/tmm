@@ -1,9 +1,12 @@
-n0 = 1; n1 = 1 ;
-eps=[11.9] ;miu=[1];
+n0 = 1; % incident index
+nT = 3 ; % transmission index
+eps=[2 1] ;miu=[1 3];
 lambda = 1 ;
-theta = 0;
-for i = 1 : 100 
-    thickness = [0.1+i/100];
-    tmm;
-    r(i)=R;t(i)=T;
-end
+theta = 57;
+phi = 23;
+thickness = [0.25 0.5];
+% for m = 0:500
+%     theta = m/10;
+% tmm;
+%  r(m+1)=R;
+% end

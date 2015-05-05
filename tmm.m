@@ -1,20 +1,18 @@
+% cInt 还有问题
 init; 
 layer_cal;
-    kZR = sqrt(epsR*miuR-kX^2-kY^2);
-    Q = (1/miuR)*[kX*kY miuR*epsR-kX^2 ; kY^2-miuR*epsR -kX*kY]; W = eye(length(Q));
-    Omega = 1i*kZR*W ; V = Q/Omega; 
-    A = W+V_h\V ; B = W - V_h\V ;
-sR = [A\B 2*inv(A) ; 0.5*(A-B/A*B) B/A];
 sG = redcross(sR,sD) ;
-    kZT = sqrt(epsT*miuR-kX^2-kY^2);
-    Q = (1/miuT)*[kX*kY miuT*epsR-kX^2 ; kY^2-miuT*epsT -kX*kY]; W = eye(length(Q));
+    kZT = sqrt(epsT*miuT-kX^2-kY^2);
+    Q = (1/miuT)*[kX*kY miuT*epsT-kX^2 ; kY^2-miuT*epsT -kX*kY];
     Omega = 1i*kZT*W ; V = Q/Omega; 
     A = W+V_h\V ; B = W - V_h\V ;
-sT = [B/A 0.5*(A-B/A*B) ;  2*inv(A) A\B];
+sT = [B/A 0.5*(A-B/A*B) ;  2*inv(A) -A\B];
 sG = redcross(sG,sT);
+
 cInt = [0;1];
+
 eRel = get_s(sG,11)*cInt ;
-eTrn = get_s(sG,12)*cInt ; 
+eTrn = get_s(sG,21)*cInt ; 
 eZR = (-kX*eRel(1)-kY*eRel(2))/kZR;
 eZT = (-kX*eTrn(1)-kY*eTrn(2))/kZT;
 R = abs(eRel(1))^2+abs(eRel(2))^2+abs(eZR)^2 ;
