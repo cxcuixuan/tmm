@@ -1,10 +1,11 @@
 n0 = 1; % incident index
-nT = 3 ; % transmission index
-eps=[2 1] ;miu=[1 3];
+nT = 1 ; % transmission index
+eps=[] ;miu=[];
 lambda = 1 ;
 theta = 57;
 phi = 23;
-thickness = [0.25 0.5];
+thickness = [];
+tmm;
 % for m = 0:500
 %     theta = m/10;
 % tmm;
