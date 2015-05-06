@@ -33,3 +33,7 @@ S1 = [S11_g S12_g;S21_g S22_g];
 % 
 % upd_smatrix;
 % S = [S11_g S12_g;S21_g S22_g];
+% 
+% if isnan(NaN)
+% a=2;
+% end
