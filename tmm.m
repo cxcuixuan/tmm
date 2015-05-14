@@ -1,7 +1,7 @@
 init; 
 layer_cal;
 sG = redcross(sR,sD) ;
-    kZT = sqrt(epsT*miuT-kX^2-kY^2);
+    kZT = conj(sqrt(epsT*miuT-kX^2-kY^2));
     Q = (1/miuT)*[kX*kY miuT*epsT-kX^2 ; kY^2-miuT*epsT -kX*kY];
     Omega = 1i*kZT*W ; V = Q/Omega; 
     A = W+V_h\V ; B = W - V_h\V ;

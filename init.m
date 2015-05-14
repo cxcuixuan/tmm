@@ -5,7 +5,7 @@ kX = n0*sin(theta*pi/180)*cos(phi*pi/180) ;
 kY = n0*sin(theta*pi/180)*sin(phi*pi/180) ;
 miuH = 1 ; epsH = 1 + kX^2 ;
 
-kZR = sqrt(epsR*miuR-kX^2-kY^2);
+kZR = conj(sqrt(epsR*miuR-kX^2-kY^2));
 Q = (1/miuR)*[kX*kY miuR*epsR-kX^2 ; kY^2-miuR*epsR -kX*kY]; W = eye(length(Q));
 Omega = 1i*kZR*W ; V = Q/Omega; 
 

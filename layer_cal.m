@@ -1,7 +1,7 @@
 % —È÷§ŒﬁŒÛ
 layerNum = length(eps);
 for n = 1:layerNum
-    kZ = sqrt(eps(n)*miu(n)-kX^2-kY^2);
+    kZ = conj(sqrt(eps(n)*miu(n)-kX^2-kY^2));
     Q = (1/miu(n))*[kX*kY miu(n)*eps(n)-kX^2 ; kY^2-miu(n)*eps(n) -kX*kY]; W = eye(length(Q));
     Omega = 1i*kZ*W ; V = Q/Omega; 
     A = W+V\V_h ; B = W - V\V_h ;
