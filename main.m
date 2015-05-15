@@ -6,7 +6,7 @@ thickness1 = []; % thickness of each layer
 thickness2 = []; thickness = [];
 eps_temp = [5,1]; miu_temp=[1, 1];
 lambda = 1 ; % incident wavelength
-theta = 59.9;  % angle with z-axis
+theta = 60;  % angle with z-axis
 phi = 0;    % argument
 pTE = 1;  % TE component
 pTM = 0;  % TM component
